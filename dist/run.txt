@@ -1,3 +1,0 @@
-open sg982zc:csqsij@ftp.chobi.net
-cd public_html
-put Zfile.zip

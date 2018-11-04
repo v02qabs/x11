@@ -1,2 +1,0 @@
-sh
-cat install.sh
