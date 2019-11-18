@@ -27,6 +27,6 @@ int sqlite3exe(void *cb_arg, int column_count, char **data, char ** column_name)
 {
 	int i,*db_type;
 	db_type = (int *)cb_arg;
-	printf("%s, %s", column_name[0], data[0]);
+	printf("%s, %s\n", column_name[0], data[0]);
 	return 0;
 }
