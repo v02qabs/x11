@@ -6,7 +6,7 @@ int sqlite3exe(void *cb_arg, int column_coun, char **data, char **column_name);
 
 int main()
 {
-	char *fname = "./c++.db";
+	char *fname = "./english.db";
 	sqlite3 *db;
 	int ret;
 	char **errormsg = '\0';
@@ -14,7 +14,7 @@ int main()
 	if(ret != SQLITE_OK)
 		printf("error\n");
 	int init;
-	ret = sqlite3_exec(db, "select * from method", sqlite3exe, &init, &errormsg);
+	ret = sqlite3_exec(db, "select * from words", sqlite3exe, &init, &errormsg);
 
 		if(ret != SQLITE_OK)
 			printf("error\0");
