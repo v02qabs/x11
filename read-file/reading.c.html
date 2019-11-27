@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>~/ドキュメント/devel/term-clang/read-file/reading.c.html</title>
+<meta name="Generator" content="Vim/8.0">
+<meta charset~"utf-8">
+<meta name="viewport" content~="width=device-width">
+<meta name="plugin-version" content="vim7.4_v2">
+<meta name="syntax" content="c">
+<meta name="settings" content="use_css,pre_wrap,no_foldcolumn,prevent_copy=">
+<meta name="colorscheme" content="none">
+<style type="text/css">
+<!--
+pre { white-space: pre-wrap; font-family: monospace; color: #ffffff; background-color: #000000; }
+body { font-family: monospace; color: #ffffff; background-color: #000000; }
+* { font-size: 1em; }
+.Constant { color: #ff40ff; }
+.Special { color: #ffd7d7; }
+.Statement { color: #ffff00; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #87ffaf; }
+-->
+</style>
+
+<script type='text/javascript'>
+<!--
+
+-->
+</script>
+</head>
+<body>
+<pre id='vimCodeElement'>
+<span class="PreProc">#include </span><span class="Constant">&lt;stdio.h&gt;</span>
+<span class="PreProc">#include </span><span class="Constant">&lt;stdlib.h&gt;</span>
+<span class="PreProc">#include </span><span class="Constant">&lt;string.h&gt;</span>
+
+<span class="Type">int</span> main(<span class="Type">int</span> argc, <span class="Type">char</span> *argv[])
+{
+	<span class="Statement">if</span>(argc&lt;<span class="Constant">1</span>)
+		printf(<span class="Constant">&quot;引数が足りません。</span><span class="Special">\n</span><span class="Constant">&quot;</span>);
+
+	printf(<span class="Constant">&quot;読み込むファイル名：</span><span class="Special">%s</span><span class="Special">\n</span><span class="Constant">&quot;</span>, argv[<span class="Constant">1</span>]);
+
+	<span class="Type">FILE</span> *fp;
+	<span class="Type">char</span> *filename = argv[<span class="Constant">1</span>];
+	fp = fopen(filename, <span class="Constant">&quot;r&quot;</span>);
+	<span class="Statement">if</span>(fp == <span class="Constant">NULL</span>)
+		printf(<span class="Constant">&quot;ファイルを読み込めません。</span><span class="Special">\n</span><span class="Constant">&quot;</span>);
+
+	<span class="Type">char</span> subject[<span class="Constant">6000</span>];
+	<span class="Statement">while</span>(fgets(subject , <span class="Constant">6000</span>, fp))
+	{
+		printf(<span class="Constant">&quot;</span><span class="Special">%s</span><span class="Special">\n</span><span class="Constant">&quot;</span>, subject);
+	}
+}
+
+
+</pre>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->
